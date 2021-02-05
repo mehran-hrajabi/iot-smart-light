@@ -1,0 +1,30 @@
+@import '../../assets/sass/base';
+
+.autoHandler{
+    @include flex(column, center, space-around);
+    @extend .box-basic;
+    > div{
+        @include flex(row, center, center);
+    }
+    button{
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    input{
+        margin-left: 10px;
+        width:140px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: $tabletBp) {
+    .autoHandler{
+        input{
+            width: 170px;
+            margin-left: 5px;
+        }
+    }
+}

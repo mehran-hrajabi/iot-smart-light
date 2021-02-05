@@ -1,0 +1,29 @@
+@import '../../assets/sass/base';
+
+.manualHandler{
+    @include flex(column, center, center);
+    @extend .box-basic;
+    button{
+        width: 250px;
+        height: 50px;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: $tabletBp) and (max-width: $laptopBp){
+    .manualHandler{
+        button{
+            width: 200px;
+            height: 40px;
+        }
+    }
+}
+@media only screen and (max-width: $tabletBp) {
+    .manualHandler{
+        button{
+            width: 150px;
+            height: 40px;
+        }
+    }
+}

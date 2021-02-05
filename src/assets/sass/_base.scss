@@ -1,0 +1,78 @@
+$btn: #d5c455;
+$bodyBg: #f7f7f7;
+$boxBg: #f6f4e6;
+$other2: #ede59a;
+$other: #fddb3a;
+$laptopBp: 1200px;
+$tabletBp: 992px;
+$mobileBp: 768px;
+$smallMobileBp: 450px;
+
+@mixin flex($dir, $align, $justify){
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    box-sizing : border-box ;
+}
+
+body{
+    background-color: $bodyBg;
+}
+
+h1, h2, h3{
+    font-weight: bold;
+}
+
+p, h1, h2, h3{text-align: center;}
+
+button, input{
+    outline: none;
+    font-size: 20px;
+}
+button{
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 1;
+    background-color: $btn;
+    &:hover{
+        opacity: 0.8;
+        transition-duration: 0.5s;
+    }
+}
+
+.box-basic{
+    border: 2px solid black;
+    background-color: $boxBg;
+    border-radius: 25px;
+    padding: 30px 20px;
+    width: 25%;
+    height: 350px;
+}
+
+@media only screen and (min-width: $mobileBp) and (max-width: $tabletBp) {
+    .box-basic{
+        width: 30%;
+        padding: 15px;
+    }
+}
+@media only screen and (max-width: $mobileBp) {
+    .box-basic{
+        width: 65%;
+        padding: 15px;
+        margin: 10px;
+        height: 300px;
+    }
+}
+@media only screen and (max-width: $smallMobileBp) {
+    .box-basic{
+        width: 80%;
+    }
+}

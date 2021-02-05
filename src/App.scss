@@ -1,0 +1,23 @@
+@import './assets/sass/base';
+
+.app{
+  @include flex(row, center, space-around);
+  padding-top: 150px;
+}
+
+@media only screen and (min-width: $tabletBp) and (max-width: $laptopBp){
+  .app{
+    padding-top: 100px;
+  }
+}
+@media only screen and (min-width: $mobileBp) and (max-width: $tabletBp) {
+  .app{
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: $mobileBp) {
+  .app{
+    @include flex(column, center, space-around);
+    padding-top: 0;
+  }
+}
