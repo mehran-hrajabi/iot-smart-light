@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {Component} from 'react';
 import './_autoHandler.scss';
 
@@ -31,7 +32,14 @@ class AutoHandler extends Component {
             window.alert("Both inputs are required!");
         } else{
             window.alert("Done!");
-            console.log(this.state);
+            const timestamp = {
+                on: this.state.onTime,
+                off: this.state.offTime
+            };
+            axios.post('/auto',timestamp)
+                .then(response => console.log(response))
+                .catch(error => console.log(error));
+            //console.log(this.state);
         }
     }
 

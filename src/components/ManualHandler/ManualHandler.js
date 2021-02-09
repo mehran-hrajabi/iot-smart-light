@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './_manualHandler.scss';
 
 class ManualHandler extends Component{
@@ -14,7 +15,11 @@ class ManualHandler extends Component{
 
     componentDidUpdate(){
         //Cause side effects here
-        console.log(this.state.manualHandle);
+        //console.log(this.state.manualHandle);
+        axios.get('/manual')
+        .then(response => {
+            console.log(response);
+        });
     }
 
     render(){

@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './_voiceCommand.scss';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -34,7 +35,10 @@ const VoiceCommand = () => {
   
   useEffect(() =>{
     //Cause side effects here
-    console.log(savedNotes);
+    //console.log(savedNotes);
+    axios.post('/voice',savedNotes)
+      .then(response => console.log(response))
+      .catch(error => console.log(error));
   });
 
     return(
