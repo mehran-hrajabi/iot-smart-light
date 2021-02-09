@@ -36,7 +36,7 @@ class AutoHandler extends Component {
                 on: this.state.onTime,
                 off: this.state.offTime
             };
-            axios.post('/auto',timestamp)
+            axios.post('http://192.168.1.4:5000/auto',timestamp)
                 .then(response => console.log(response))
                 .catch(error => console.log(error));
             //console.log(this.state);

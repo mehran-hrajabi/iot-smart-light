@@ -16,7 +16,7 @@ class ManualHandler extends Component{
     componentDidUpdate(){
         //Cause side effects here
         //console.log(this.state.manualHandle);
-        axios.get('/manual')
+        axios.get('http://192.168.1.4:5000/manual')
         .then(response => {
             console.log(response);
         });

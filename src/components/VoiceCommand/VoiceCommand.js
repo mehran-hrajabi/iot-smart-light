@@ -36,7 +36,7 @@ const VoiceCommand = () => {
   useEffect(() =>{
     //Cause side effects here
     //console.log(savedNotes);
-    axios.post('/voice',savedNotes)
+    axios.post('http://192.168.1.4:5000/voice',savedNotes)
       .then(response => console.log(response))
       .catch(error => console.log(error));
   });
